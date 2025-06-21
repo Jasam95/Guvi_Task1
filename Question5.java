@@ -2,17 +2,19 @@ package Task1;
 
 public class Question5 {
     public static void main(String[] args) {
-        //Question 5 Number pattern
-            for (int i = 1; i <= 5; i++) {
-                int num=5;
-                for (int j = 1; j <= i; j++) {
-                    System.out.print(num);     //out i=1(5) i=2 (5,4)  i=3(5,4,3) i=4(5,4,3,2) i=5(5,4,3,2,1)
-                    num--;
-                }
-                for (int k = 1; k <= 5 - i; k++) {
-                    System.out.print(6 - i );  //repeat num
-                }
-                System.out.println();
-            }
+         //Final amount after discount applied
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the purchase amount");
+        int purchaseAmount = sc.nextInt();
+        double finalPrice =0;
+        if(purchaseAmount < 500){
+            System.out.println("no discount The product price is :" + purchaseAmount);
+        } else if (purchaseAmount >= 500 & purchaseAmount <= 1000) {
+            finalPrice = purchaseAmount - (purchaseAmount*((double) 10 /100));  // 10% discount
+            System.out.println("10% discount ie., the product final price is :" + finalPrice);
+        }else if(purchaseAmount >1000){
+            finalPrice = purchaseAmount - (purchaseAmount*((double) 20 /100));  // 20% discount
+            System.out.println("20% discount ie., the product final price is :" + finalPrice);
+        }
     }
 }
